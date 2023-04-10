@@ -12,6 +12,8 @@ public class Tile : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = tileSprites[Random.Range(0, tileSprites.Length)];
+        spriteRenderer.color = Color.black;
+        gameObject.transform.Rotate(new Vector3(0, 0, 90f * Random.Range(0, 4)));
     }
 
     // Update is called once per frame

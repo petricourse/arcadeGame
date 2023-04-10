@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bce618307aff80545bdcdd35e1ede4cd
+guid: bf3120acc10d3d443ae658a62f8b57dd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -38,7 +38,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tilesprites_0
+      name: quadrinFace_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,20 +113,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75fba51541b26740be13d34334454e8
-      internalID: 2107959849
+      spriteID: b64dad33a053da74495a5589a5968eb7
+      internalID: 449827819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilesprites_1
+      name: quadrinFace_1
       rect:
         serializedVersion: 2
         x: 32
@@ -134,20 +134,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e38145db74a53f4ca08e937e0f06e13
-      internalID: -67666500
+      spriteID: bb1c7836c6b54314a88d5e9f444723f9
+      internalID: -1548588643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilesprites_2
+      name: quadrinFace_2
       rect:
         serializedVersion: 2
         x: 64
@@ -155,14 +155,98 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5e243e8cbd4af44fb67f057d65b4b5c
-      internalID: -518595900
+      spriteID: 5970a8c92c6b9014aba85c87c6021ba7
+      internalID: 1820829637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quadrinFace_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1e16d42a9a2a0458eafb84f203a3c5
+      internalID: -671083453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quadrinFace_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd4a39ece0a0b74d86140784e5f1fc1
+      internalID: -670923462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quadrinFace_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b431ea7fe0af54c829595d37e32f5e
+      internalID: -1340543725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quadrinFace_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f184435cd3ea843864bac9cb19eb25
+      internalID: -895687447
       vertices: []
       indices: 
       edges: []
@@ -170,7 +254,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 94a7dc032b7dcc64588fb39d6c96e8a9
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -178,9 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tilesprites_0: 2107959849
-      tilesprites_1: -67666500
-      tilesprites_2: -518595900
+      quadrinFace_0: 449827819
+      quadrinFace_1: -1548588643
+      quadrinFace_2: 1820829637
+      quadrinFace_3: -671083453
+      quadrinFace_4: -670923462
+      quadrinFace_5: -1340543725
+      quadrinFace_6: -895687447
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
