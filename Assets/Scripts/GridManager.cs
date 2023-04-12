@@ -8,6 +8,7 @@ public class GridManager : MonoBehaviour
 
     public GameObject tile;
     public GameObject quadrin;
+    public GameObject blocker;
 
     public InputManager inputManager;
 
@@ -24,6 +25,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         initGrid(8, 8);
+        blockTile(3, 3);
     }
 
     public void initGrid(int width, int height)
@@ -38,13 +40,40 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                Instantiate(tile, new Vector3(i - xOffset, j - yOffset, 0), Quaternion.identity, gameObject.transform);
+                tileObjects[i,j] = Instantiate(tile, new Vector3(i - xOffset, j - yOffset, 0), Quaternion.identity, gameObject.transform);
+                tiles[i, j] = tileObjects[i, j].GetComponent<Tile>();
             }
         }
 
         createNewQuadrin(2, 2);
         createNewQuadrin(4, 3);
         createNewQuadrin(2, 3);
+    }
+
+    public void blockTile(int x, int y)
+    {
+        if (tiles[x,y].blocked == false)
+        {
+            GameObject block = Instantiate(blocker, new Vector3(0, 0, 0), Quaternion.identity, gameObject.transform);
+            setPosByGrid(x, y, block);
+            tiles[x, y].blocker = block;
+        }
+        tiles[x, y].blocked = true;
+    }
+
+    public void clearTile(int x, int y)
+    {
+        if (tiles[x, y].blocked) {
+            Destroy(tiles[x, y].blocker);
+            tiles[x, y].blocked = false;
+        }
+        if (tiles[x,y].quadrin != null)
+        {
+            Destroy(tiles[x, y].quadrin);
+            quadrinObjects.Remove(tiles[x, y].quadrin);
+            quadrins.Remove(tiles[x, y].quadrin.GetComponent<Quadrin>());
+            tiles[x, y].quadrin = null;
+        }
     }
 
     public void createNewQuadrin(int x, int y)
@@ -55,48 +84,34 @@ public class GridManager : MonoBehaviour
         quad.GetComponent<Quadrin>().pos[1] = y;
 
         setPosByGrid(x, y, quad);
+        tiles[x, y].quadrin = quad;
     }
 
     public void moveQuadrins(int x, int y)
     {
-        int highestX = 0;
-        int lowestX = width - 1;
-        int highestY = 0;
-        int lowestY = height - 1;
 
         foreach (Quadrin quadrin in quadrins)
         {
-            if (quadrin.pos[0] > highestX)
+            if (quadrin.pos[0] + x >= width || quadrin.pos[0] + x < 0
+                || quadrin.pos[1] + y > height || quadrin.pos[1] + y < 0)
             {
-                highestX = quadrin.pos[0];
+                return;
             }
-            if (quadrin.pos[0]  < lowestX)
-            {
-                lowestX = quadrin.pos[0];
-            }
-            if (quadrin.pos[1] > highestY)
-            {
-                highestY = quadrin.pos[1];
-            }
-            if (quadrin.pos[1]  < lowestY)
-            {
-                lowestY = quadrin.pos[1];
-            }
-        }
 
-        //Debug.Log("HX: " + highestX + ", " + highestY);
-        //Debug.Log("HY: " + highestY + ", " + lowestY);
-
-        if (highestX + x >= width || lowestX + x < 0 || highestY + y >= height || lowestY + y < 0)
-        {
-            Debug.Log("Quadrin move failure!");
-            return;
+            if (tiles[quadrin.pos[0] + x, quadrin.pos[1] + y].blocked)
+            {
+                return;
+            }
         }
 
         foreach (Quadrin quadrin in quadrins)
         {
+            if (tiles[quadrin.pos[0], quadrin.pos[1]].quadrin == quadrin.gameObject) {
+                tiles[quadrin.pos[0], quadrin.pos[1]].quadrin = null;
+            }
             quadrin.pos[0] += x;
             quadrin.pos[1] += y;
+            tiles[quadrin.pos[0], quadrin.pos[1]].quadrin = quadrin.gameObject;
             setPosByGrid( quadrin.pos[0], quadrin.pos[1], quadrin.gameObject);
         }
     }
@@ -110,11 +125,5 @@ public class GridManager : MonoBehaviour
     private void setPosByGrid(int gridX, int gridY, GameObject obj)
     {
         obj.transform.position = new Vector3(gridX - width / 2f, gridY - height / 2f, obj.transform.position.z);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
