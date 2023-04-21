@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public GameObject grid;
     public InputManager inputManager;
+    public RhythmManager rhythmManager;
+
+    public Song[] songs;
 
     // Start is called before the first frame update
     void Start()
@@ -13,7 +16,9 @@ public class GameManager : MonoBehaviour
         GameObject gridObj = Instantiate(grid);
         GridManager gridMono = gridObj.GetComponent<GridManager>();
         gridMono.inputManager = inputManager;
-        inputManager.gridManager = gridMono; 
+        inputManager.gridManager = gridMono;
+        rhythmManager.setSong(songs[0]);
+        rhythmManager.playSong();
     }
 
     // Update is called once per frame
