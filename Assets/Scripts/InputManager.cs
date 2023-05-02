@@ -30,5 +30,9 @@ public class InputManager : MonoBehaviour
         {
             gridManager.moveQuadrins(1, 0);
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            gridManager.clearTile(3, 3);
+        }
     }
 }

@@ -7,6 +7,11 @@ public class Tile : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public Sprite[] tileSprites;
 
+    public GameObject blocker;
+    public GameObject quadrin;
+
+    public bool blocked = false;
+
     // Start is called before the first frame update
     void Start()
     {
