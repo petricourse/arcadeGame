@@ -9,6 +9,9 @@ public class RhythmManager : MonoBehaviour
 
     public Song currentSong;
 
+    //Okay, not literally the time signature, just the top of it...
+    public int timeSignature;
+
     public float secsPerBeat;
     public float loopPosTime;
     public float loopPosBeats;
@@ -16,6 +19,8 @@ public class RhythmManager : MonoBehaviour
     public float songStartTime;
 
     public bool playing = false;
+
+    public PhaseCreator phaseCreator;
 
     public void setSong(Song song)
     {

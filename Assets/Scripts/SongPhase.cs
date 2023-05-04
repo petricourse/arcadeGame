@@ -7,6 +7,7 @@ public class SongPhase : ScriptableObject
 {
     public PhaseType type;
     public float difficulty;
+
     //In beats
     public int numLoops;
 }

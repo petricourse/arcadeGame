@@ -9,6 +9,9 @@ public class Song : ScriptableObject
     public AudioClip baseLoop;
     public int baseLoopBeats;
 
+    //Not technically time signature, just the TOP NUMBER of the time signature
+    public int timeSignature;
+
     int gridWidth;
     int gridHeight;
 
