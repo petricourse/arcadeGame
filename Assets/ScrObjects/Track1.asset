@@ -15,5 +15,6 @@ MonoBehaviour:
   bpm: 140
   baseLoop: {fileID: 8300000, guid: 182cc206475d7d74aa34c32a808e3ea2, type: 3}
   baseLoopBeats: 8
+  timeSignature: 4
   phases:
   - {fileID: 11400000, guid: 40d8234b5a2e83b4588f84e824aaa286, type: 2}

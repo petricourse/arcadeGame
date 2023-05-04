@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 1363877100}
   - component: {fileID: 1363877104}
   - component: {fileID: 1363877103}
+  - component: {fileID: 1363877105}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -383,8 +384,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1363877103}
   currentSong: {fileID: 0}
+  timeSignature: 0
   secsPerBeat: 0
   loopPosTime: 0
   loopPosBeats: 0
   songStartTime: 0
   playing: 0
+  phaseCreator: {fileID: 1363877105}
+--- !u!114 &1363877105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363877099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2896e345a946340a7729d4ceed5b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSong: {fileID: 0}
+  rhythmManager: {fileID: 1363877104}
